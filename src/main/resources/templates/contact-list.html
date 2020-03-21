@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact list</title>
+    <link rel="stylesheet" th:src="style.css" >
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}" />
+
+</head>
+<body>
+<div>
+    <h1>Contacts</h1>
+    <div th:if="${contacts.isEmpty()}">
+        <p>No contact in storage</p>
+    </div>
+    <div th:unless="${contacts.isEmpty()}">
+
+        <table >
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Birth date</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="person : ${contacts}">
+                    <td> <span th:text="${person.name}"></span></td>
+                    <td> <span th:text="${person.email}"></span></td>
+                    <td> <span th:text="${person.birthDate}"></span></td>
+                    <td> <span th:text="${person.gender}"></span></td>
+                    <td> <a class="btn" th:href="@{temp-view.html}">details</a></td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>

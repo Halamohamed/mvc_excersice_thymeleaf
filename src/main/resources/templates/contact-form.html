@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact page</title>
+    <link rel="stylesheet" th:src="style.css">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}" />
+
+</head>
+<body>
+<h1 class="header">Temperature measurement</h1>
+    <div class="img1">
+        <img src="image/fever.jpg" alt="fever thermometer" title="thermometer">
+    </div>
+    <div>
+        <h1>Contact</h1>
+        <form th:action="@{/temperature}" method="get">
+            <label>Name: </label>
+            <input type="text" id="name" name="name" placeholder="Enter a name"/><br/>
+            <label>Email: </label>
+            <input type="email" id="email" name="email" placeholder="Enter email"><br/>
+            <label>Birth Date: </label>
+            <input type="date" id="birthDate" name="birthDate"><br/>
+            <label>Gender: </label>
+            <input type="text" id="gender" name="gender" placeholder="Enter gender">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thumeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Body Temperature </title>
+    <link rel="stylesheet" th:src="style.css">
+</head>
+<body>
+    <h1 class="header">Temperature measurement</h1>
+    <div class="img1">
+        <img src="image/fever.jpg" alt="fever thermometer" title="thermometer">
+    </div>
+
+    <div th:each="contact : ${contacts}">
+        <h1>Hi "${contact.name}"</h1>
+    </div>
+        <form th:action="@{/temperature}"  method="get">
+            <div >
+                <label>Enter your temperature here : </label>
+                <input type="number" id="fever" name="fever" placeholder="Enter you fever">
+            </div><br>
+
+            <button type="submit"> Send</button>
+            <h2 class="header" th:text="${fever}"></h2>
+        </form>
+
+    <button id="tempReset"><a th:href="@{/temperature}"/> Reset ...</button>
+
+</body>
+</html>
