@@ -15,15 +15,15 @@ public class FeverController {
         String message = "Enter your temperature";
        if(temperature != null){
            if(temperature >=25.0 && temperature <35){
-               message = "Your have " + temperature + " , Oh! you freezing.";
+               message = "You have " + temperature + " , Oh! you freezing.";
            }else if (temperature >=35 && temperature < 38){
                message = "You have " + temperature + " , Normal temperature.";
            }else if (temperature >=38 && temperature < 40){
-           message = "You have " + temperature + " ,  hyperthermia  temperature. you have to see a doctor.";
+           message = "You have " + temperature + " ,  hyperthermia  temperature, you have to see a doctor.";
            }else if (temperature >=40 ){
-           message = "You have " + temperature + " ,  hyperthermia  temperature. you need emergency. ";
+           message = "You have " + temperature + " ,  hyperthermia  temperature, you need emergency. ";
        }else{
-               message = "You have " + temperature + " no way, something is wrong.";
+               message = "You have " + temperature + " no way, something is wrong, you can't be alive.";
            }
        }
        model.addAttribute("fever", message);
