@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class FeverController {
 
-
     @GetMapping("/temperature")
     public String temperatureFever(@RequestParam(value = "fever" ,required = false) Double temperature, Model model){
         String message = "Enter your temperature";
@@ -19,11 +18,11 @@ public class FeverController {
            }else if (temperature >=35 && temperature < 38){
                message = "You have " + temperature + " , Normal temperature.";
            }else if (temperature >=38 && temperature < 40){
-           message = "You have " + temperature + " ,  hyperthermia  temperature, you have to see a doctor.";
+           message = "You have " + temperature + " ,  hyperthermia  temperature,  \n  you have to see a doctor.";
            }else if (temperature >=40 ){
-           message = "You have " + temperature + " ,  hyperthermia  temperature, you need emergency. ";
+           message = "You have " + temperature + " ,  hyperthermia  temperature,  \n  you need emergency. ";
        }else{
-               message = "You have " + temperature + " no way, something is wrong, you can't be alive.";
+               message = "You have " + temperature + " no way, something is wrong,   \n you can't be alive.";
            }
        }
        model.addAttribute("fever", message);
